@@ -1,15 +1,16 @@
 import turtle
 import math
+wn=turtle.Screen()
+fred = turtle.Turtle()
+turtle.setworldcoordinates(-360,-1.5,360,1.5)
 
 def drawSineCurve(myturtle=None):
   for angle in range(-360, 360):
     y = math.sin(math.radians(angle))
     fred.goto(angle, y)
-  fred.penup()
-  
+
 def setupWindow(mywindow=None):
   wn = turtle.Screen()
-  fred = turtle.Turtle()
   turtle.bgcolor("lightgreen")
   turtle.setworldcoordinates(-360, -1.5, 360, 1.5)
 
@@ -26,20 +27,14 @@ def drawCosineCurve(myturtle=None):
   for angle in range(-360,361):
     y=math.cos(math.radians(angle))
     fred.goto(angle, y)
-  fred.penup()
+  
 
 def drawTangentCurve(myturtle=None):
   fred.speed(0)
-  fred.pendown()
   for angle in range(-360, 361):
     y=math.tan(math.radians(angle))
     fred.goto(angle,y)
-
-setupWindow()
-setupAxis()
-drawSineCurve()
-drawCosineCurve()
-drawTangentCurve()
+  fred.penup()
 
 
 ##########  Do Not Alter Any Code Past Here ########
